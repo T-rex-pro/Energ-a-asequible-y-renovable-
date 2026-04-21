@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Marquesina JS</title>
+</head>
+
+<body>
+
+<h1>Marquesina con JavaScript 🚀</h1>
+
+<p id="mensaje"></p>
+
+<script>
+    let texto = "Bienvenido a mi portafolio JavaScript 🚀   ";
+
+    function moverTexto() {
+        texto = texto.substring(1) + texto.charAt(0);
+        document.getElementById("mensaje").textContent = texto;
+    }
+
+    setInterval(moverTexto, 200);
+</script>
+
+</body>
+</html>
