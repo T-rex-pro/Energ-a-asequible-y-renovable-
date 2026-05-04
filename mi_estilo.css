@@ -45,3 +45,39 @@ footer {
     padding: 10px;
     margin-top: 20px;
 }
+
+/* ===== FAQ (ACORDEÓN) ===== */
+.accordion-header {
+    background-color: #334155;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 8px;
+    transition: 0.3s;
+}
+
+.accordion-header:hover {
+    background-color: #38bdf8;
+    color: black;
+}
+
+.accordion-content {
+    display: none;
+    padding: 12px;
+    background-color: #0f172a;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+/* ===== GRÁFICA ===== */
+canvas {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* ===== MAPA ===== */
+#mapa {
+    border-radius: 10px;
+    overflow: hidden;
+}
