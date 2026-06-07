@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi portafolio JavaScript</title>
+
+    <title>Energía Asequible y No Contaminante</title>
 
     <link rel="stylesheet" href="mi_estilo.css">
 </head>
@@ -11,7 +12,7 @@
 <body>
 
 <header>
-    <h1>Mi portafolio JavaScript 🚀</h1>
+    <h1>⚡ Energía Asequible y No Contaminante</h1>
 
     <p><strong>Equipo:</strong></p>
     <p>Said Mascorro Zaragoza</p>
@@ -22,42 +23,87 @@
     <p><strong>Campus:</strong> Mérida</p>
     <p><strong>Docente:</strong> Guillermo Peña</p>
 
-    <!-- Marquesina -->
     <h2 id="mensaje"></h2>
 </header>
 
 <nav>
-    <a href="#">Inicio</a>
-    <a href="#">Sobre nosotros</a>
-    <a href="#">Proyectos</a>
-    <a href="marquesina.html">Marquesina aparte</a>
+    <a href="#inicio">Inicio</a>
+    <a href="#nosotros">Sobre Nosotros</a>
+    <a href="#proyectos">Proyecto</a>
+    <a href="#blog">Blog</a>
 </nav>
 
 <div class="container">
 
-    <div class="card">
-        <h2>👋 Bienvenido</h2>
-        <p>Este es nuestro portafolio usando HTML, CSS y JavaScript.</p>
+    <div class="card" id="inicio">
+        <h2>🌎 Bienvenido</h2>
+        <p>
+            Este sitio fue creado como parte del proyecto sobre el
+            Objetivo de Desarrollo Sostenible 7:
+            Energía Asequible y No Contaminante.
+        </p>
+    </div>
+
+    <div class="card" id="nosotros">
+        <h2>👥 Sobre Nosotros</h2>
+        <p>
+            Somos estudiantes de preparatoria interesados en promover el uso
+            de energías renovables y crear conciencia sobre la importancia
+            de un acceso sostenible a la energía.
+        </p>
+    </div>
+
+    <div class="card" id="proyectos">
+        <h2>💡 Nuestro Proyecto</h2>
+        <p>
+            Investigamos el impacto de la energía solar y otras fuentes
+            renovables como alternativa para reducir costos energéticos y
+            disminuir la contaminación ambiental.
+        </p>
+    </div>
+
+    <div class="card" id="blog">
+        <h2>📝 Blog</h2>
+
+        <h3>¿Cuánto puedes ahorrar con energía solar?</h3>
+
+        <p>
+            La energía solar es una de las alternativas más eficientes para
+            disminuir el consumo de electricidad y aprovechar una fuente de
+            energía renovable e inagotable.
+        </p>
+
+        <p>
+            Los paneles solares permiten transformar la luz del sol en energía
+            eléctrica, ayudando a reducir gastos y contribuyendo al cuidado
+            del medio ambiente.
+        </p>
+
+        <p>
+            En futuras publicaciones compartiremos más información sobre
+            energías renovables, ahorro energético y sustentabilidad.
+        </p>
     </div>
 
     <div class="card">
-        <h2>📚 Sobre nosotros</h2>
-        <p>Somos estudiantes de preparatoria aprendiendo programación en equipo.</p>
-    </div>
-
-    <div class="card">
-        <h2>💡 Proyectos</h2>
-        <p>Incluye una marquesina interactiva desarrollada con JavaScript.</p>
+        <h2>🏆 Ideas para futuras publicaciones</h2>
+        <ul>
+            <li>¿Cuánto puedes ahorrar con energía solar?</li>
+            <li>Mitos y realidades de los paneles solares.</li>
+            <li>Cómo reducir tu consumo eléctrico.</li>
+            <li>Beneficios de las energías renovables.</li>
+            <li>ODS 7 y su impacto en la sociedad.</li>
+        </ul>
     </div>
 
 </div>
 
 <footer>
-    <p>© 2026 Equipo JavaScript</p>
+    <p>© 2026 Equipo Energía Asequible y No Contaminante</p>
 </footer>
 
 <script>
-    let texto = "Bienvenido a nuestro portafolio JavaScript 🚀   ";
+    let texto = "⚡ Energía limpia para un futuro sostenible 🌎   ";
 
     function moverTexto() {
         texto = texto.substring(1) + texto.charAt(0);
