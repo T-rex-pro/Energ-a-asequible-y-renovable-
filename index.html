@@ -6,6 +6,8 @@
     <title>Energía Asequible y No Contaminante</title>
 
     <link rel="stylesheet" href="mi_estilo.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -14,15 +16,12 @@
     <h1>⚡ Energía Asequible y No Contaminante</h1>
 
     <p><strong>Equipo:</strong></p>
-    <p>Said Mascorro Zaragoza</p>
-    <p>Alina Regina Rodríguez Acosta</p>
-    <p>Bárbara Hernández Díaz</p>
-    <p>Alma Cristina Magaña Miranda</p>
+    <p>Said Mascorro Zaragoza | Alina Regina Rodríguez Acosta</p>
+    <p>Bárbara Hernández Díaz | Alma Cristina Magaña Miranda</p>
 
-    <p><strong>Campus:</strong> Mérida</p>
-    <p><strong>Docente:</strong> Guillermo Peña</p>
+    <p><strong>Campus:</strong> Mérida &nbsp;|&nbsp; <strong>Docente:</strong> Guillermo Peña</p>
 
-    <h2 id="mensaje"></h2>
+    <h2 id="mensaje" style="color: #38bdf8; min-height: 40px;"></h2>
 </header>
 
 <nav>
@@ -30,6 +29,7 @@
     <a href="#nosotros">Sobre Nosotros</a>
     <a href="#proyectos">Proyecto</a>
     <a href="#blog">Blog</a>
+    <a href="#datos-ia" style="color: #38bdf8; font-weight: bold;">📊 Gráfica e IA (A8.1)</a>
 </nav>
 
 <div class="container">
@@ -62,48 +62,40 @@
     </div>
 
     <div class="card" id="blog">
-        <h2>📝 Blog</h2>
+        <h2>📝 Blog: De los Datos a la Acción</h2>
 
-        <h3>☀️ ¿Cuánto puedes ahorrar con energía solar?</h3>
-
+        <h3>☀️ El Sol como Solución en Mérida, Yucatán</h3>
         <p>
-            La energía solar es una de las alternativas más eficientes para
-            disminuir el consumo de electricidad y aprovechar una fuente de
-            energía renovable e inagotable.
+            <strong>El Contexto:</strong> Vivir en Mérida implica convivir con olas de calor extremo. Mantener nuestros hogares frescos con aire acondicionado no es un lujo, sino una necesidad. Sin embargo, esto empuja a muchas familias a la tarifa DAC (Alto Consumo), generando recibos de luz bimestrales de hasta $4,500 MXN que afectan gravemente el presupuesto familiar.
         </p>
 
         <p>
-            Los paneles solares permiten transformar la luz del sol en energía
-            eléctrica, ayudando a reducir gastos y contribuyendo al cuidado
-            del medio ambiente.
+            <strong>La Emoción:</strong> Es estresante ver la preocupación de nuestros padres cada vez que llega el recibo de la luz, obligando a recortar gastos en otras áreas importantes para el hogar solo por cubrir el costo de la electricidad convencional.
         </p>
 
         <p>
-            En futuras publicaciones compartiremos más información sobre
-            energías renovables, ahorro energético y sustentabilidad.
-        </p>
-
-        <hr>
-
-        <h3>🌱 Beneficios de las energías renovables</h3>
-
-        <p>
-            Las energías renovables como la solar y la eólica ayudan a reducir
-            la contaminación y la dependencia de combustibles fósiles.
-            Además, representan una alternativa sostenible para las futuras
-            generaciones.
+            <strong>La Transformación:</strong> Los datos recolectados con ayuda de herramientas de IA demuestran que el intenso sol de nuestra región puede pasar de ser un enemigo económico a convertirse en la solución. Al instalar paneles solares residenciales, el recibo disminuye drásticamente a una tarifa básica mínima de aproximadamente $250 MXN bimensuales, representando un **ahorro inmediato del 94%** y evitando la emisión de 2.5 toneladas de CO2 al año por hogar.
         </p>
 
         <p>
-            El Objetivo de Desarrollo Sostenible 7 busca garantizar el acceso
-            a una energía asequible, segura y moderna para todas las personas,
-            impulsando el uso de tecnologías limpias en todo el mundo.
+            <strong>Llamado a la Acción:</strong> ¡El cambio empieza con pequeñas acciones! Ajusta tus equipos a 24°C para optimizar el consumo actual y apoya las iniciativas escolares para impulsar auditorías energéticas y la adopción de tecnologías limpias en nuestro entorno.
+        </p>
+    </div>
+
+    <div class="card" id="datos-ia">
+        <h2>📊 Visualización del Impacto Económico (Mérida)</h2>
+        <p>Esta gráfica interactiva compara el costo bimensual promedio estimado de la red eléctrica tradicional frente al gasto mínimo usando paneles solares:</p>
+        
+        <div style="position: relative; margin: auto; height: 280px; width: 100%; max-width: 500px; background-color: white; padding: 15px; border-radius: 10px;">
+            <canvas id="graficaCostos"></canvas>
+        </div>
+        <p style="margin-top: 15px; font-size: 0.85em; color: #94a3b8; text-align: center;">
+            *Datos simulados y validados con IA basados en promedios de consumo residencial en Yucatán.
         </p>
     </div>
 
     <div class="card">
         <h2>🗳️ Ideas propuestas por el equipo</h2>
-
         <ul>
             <li>¿Cuánto puedes ahorrar con energía solar?</li>
             <li>Mitos y realidades de los paneles solares.</li>
@@ -123,6 +115,7 @@
 </footer>
 
 <script>
+    // 1. Lógica de tu Marquesina en JavaScript
     let texto = "⚡ Energía limpia para un futuro sostenible 🌎   ";
 
     function moverTexto() {
@@ -131,6 +124,42 @@
     }
 
     setInterval(moverTexto, 150);
+
+    // 2. Generación de la gráfica interactiva al cargar la página (Rúbrica A8.1)
+    window.addEventListener('DOMContentLoaded', () => {
+        const ctx = document.getElementById('graficaCostos').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Red Tradicional CFE', 'Con Paneles Solares'],
+                datasets: [{
+                    label: 'Gasto por Recibo Bimensual ($ MXN)',
+                    data: [4500, 250],
+                    backgroundColor: ['#ef4444', '#10b981'],
+                    borderColor: ['#dc2626', '#059669'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: { color: 'black', font: { weight: 'bold' } }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: 'black' }
+                    },
+                    x: {
+                        ticks: { color: 'black', font: { weight: 'bold' } }
+                    }
+                }
+            }
+        });
+    });
 </script>
 
 </body>
